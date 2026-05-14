@@ -1,0 +1,18 @@
+# catalog-info.yaml — repo myorg/pipeline-etl-faturamento
+apiVersion: backstage.io/v1alpha1
+kind: Component
+metadata:
+  name: pipeline-etl-faturamento
+  title: Pipeline ETL Faturamento
+  description: Job diário (Airflow) que consolida dados financeiros no Data Warehouse.
+  tags: [python, airflow, data-pipeline]
+  annotations:
+    github.com/project-slug: myorg/pipeline-etl-faturamento
+spec:
+  type: service
+  lifecycle: production
+  owner: group:squad-data-analytics
+  system: data-analytics
+  dependsOn:
+    - resource:default/db-data-warehouse
+    - resource:default/bucket-datalake
